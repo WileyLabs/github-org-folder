@@ -3,7 +3,7 @@
 /**
  * @copyright 2022 John Wiley & Sons, Inc.
  * @license MIT
- **/
+ */
 
 import EleventyFetch from '@11ty/eleventy-fetch';
 import yargs from 'yargs';
@@ -11,23 +11,25 @@ import { hideBin } from 'yargs/helpers';
 
 import { readdir } from 'fs/promises';
 
-const argv = yargs(hideBin(process.argv))
+const { argv } = yargs(hideBin(process.argv))
   .scriptName('gh-org-repos')
-  .usage('$0 [path] [org]',
-         'Match local folder to GitHub repo list.', (yargs) => {
-    yargs.positional('path', {
-      describe: 'Path to a directory to compare to GitHub',
-      type: 'string',
-      default: '.'
-    });
-    yargs.positional('org', {
-      describe: 'GitHub orginization or username for repo list.',
-      type: 'string'
-    })
-  })
+  .usage(
+    '$0 [path] [org]',
+    'Match local folder to GitHub repo list.',
+    (y) => {
+      y.positional('path', {
+        describe: 'Path to a directory to compare to GitHub',
+        type: 'string',
+        default: '.'
+      });
+      y.positional('org', {
+        describe: 'GitHub orginization or username for repo list.',
+        type: 'string'
+      });
+    }
+  )
   .help()
-  .version()
-  .argv;
+  .version();
 
 (async () => {
   // get the list of folder names
