@@ -1,0 +1,29 @@
+{
+  "name": "github-org-folder",
+  "version": "0.0.1",
+  "description": "Compare a local directory with a list of repos specific to a single GitHub organization or user.",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "organization",
+    "user",
+    "collection",
+    "management"
+  ],
+  "author": "John Wiley & Sons, Inc.",
+  "contributors": [
+    {
+      "name": "Benjamin Young",
+      "email": "byoung2@wiley.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "yargs": "^17.5.1"
+  }
+}
