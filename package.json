@@ -2,6 +2,7 @@
   "name": "github-org-folder",
   "version": "0.0.1",
   "description": "Compare a local directory with a list of repos specific to a single GitHub organization or user.",
+  "type": "module",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {

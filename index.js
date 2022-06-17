@@ -5,11 +5,13 @@
  * @license MIT
  **/
 
-const EleventyFetch = require('@11ty/eleventy-fetch');
+import EleventyFetch from '@11ty/eleventy-fetch';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-const { promises: { readdir } } = require('fs');
+import { readdir } from 'fs/promises';
 
-const argv = require('yargs')
+const argv = yargs(hideBin(process.argv))
   .scriptName('gh-org-repos')
   .usage('$0 [path] [org]',
          'Match local folder to GitHub repo list.', (yargs) => {
